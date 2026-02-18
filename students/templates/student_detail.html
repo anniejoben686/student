@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #36b9cc, #f6c23e);
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            width: 40%;
+            margin: auto;
+            padding: 30px;
+            margin-top: 80px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #858796;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>{{ student.name }}</h2>
+    <p><strong>Age:</strong> {{ student.age }}</p>
+    <p><strong>Course:</strong> {{ student.course }}</p>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+
+    <br>
+    <a href="{% url 'student_list' %}" class="back-btn">
+        Back to List
+    </a>
+</div>
+
+</body>
+</html>

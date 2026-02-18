@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4e73df, #1cc88a);
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            background: white;
+            color: black;
+            width: 40%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4e73df;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2e59d9;
+        }
+
+        .view-btn {
+            background-color: #1cc88a;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Student Management System</h1>
+
+<div class="container">
+    <h2>Add Student</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="number" name="age" placeholder="Age" required><br>
+        <input type="text" name="course" placeholder="Course" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <br>
+    <a href="{% url 'student_list' %}">
+        <button class="view-btn">View Stored Students</button>
+    </a>
+</div>
+
+</body>
+</html>
